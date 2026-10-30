@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime> 
 #include <curses.h>
+#include "Player.h"
 
 using namespace std;
 
@@ -569,7 +570,14 @@ void lancerJeu() {
 
 int main() {
 
-    lancerJeu();
+    Player player;
+    player.DisplayStats();
+    player.TakeDamage(50);
+    player.DisplayStats();
 
+    player.SetLife(-50);
+
+    lancerJeu();
+        
     return 0;
 }
