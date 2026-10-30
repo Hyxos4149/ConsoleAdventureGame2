@@ -1,5 +1,5 @@
 # ConsoleAdventureGame2
 Second project 
 
-By Gabriel C, David et AlexandreL
+By Alexandre Lecué & Lucas Bresler
 
