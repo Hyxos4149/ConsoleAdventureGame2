@@ -124,6 +124,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleAdventureGame2.0.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="zombie.cpp" />
+    <ClCompile Include="zombiendless.cpp" />
+    <ClCompile Include="zombieswimer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="zombie.h" />
+    <ClInclude Include="zombiendless.h" />
+    <ClInclude Include="zombieswimer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
