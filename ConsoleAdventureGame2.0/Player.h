@@ -6,8 +6,8 @@
 class Player
 {
 private:
-	int life = 20;
-	int maxLife = 100;
+	int life = 1;
+	int maxLife = 3;
 
 	int stamina = 100;
 	int attack = 10;

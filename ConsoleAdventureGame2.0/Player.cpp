@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Player.h"
+#include "Mage.h"
 
 void Player::DisplayStats()
 {
@@ -27,6 +28,7 @@ void Player::Heal(int value)
 		value = 0;
 
 	SetLife(GetLife() + value);
+	//SetMana(GetMana() + value);
 }
 
 void Player::Attack(Player& target)
@@ -48,5 +50,23 @@ bool Player::IsAlive()
 bool Player::CanPlay()
 {
 		return IsAlive();
+}
+
+int Mage::GetMana()
+{
+	return 0;
+}
+
+void Mage::SetMana(int value)
+{
+}
+
+int Player::GetLife()
+{
+	return 0;
+}
+
+void Player::SetLife(int value)
+{
 }
 
