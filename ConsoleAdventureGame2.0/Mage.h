@@ -1,29 +1,11 @@
 #pragma once
 #include "Player.h"
 
-class Mage : Player
-{
-private:
-	int life = 1;
-	int maxLife = 1;
-
-	int mana = 100;
-	int attack = 50;
-
-	Weapon weapon;
-
+class Mage : public Player {
+protected:
+    int mana;
 public:
-	void DisplayStats();
-
-	void TakeDamage(int value);
-	void Heal(int value);
-	void Attack(Player& target);
-
-
-	bool IsAlive();
-	bool CanPlay();
-
-	//Getter, Setter
-	int GetMana();
-	void SetMana(int value);
+    Mage() : Player("Mage", 1, 'M'), mana(10) {}
+    int GetMana();
+    void SetMana(int value);
 };

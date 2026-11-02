@@ -2,6 +2,7 @@
 #define JEU_H
 
 #include <string>
+#include "Player.h"
 
 constexpr int map_size_x = 20;
 constexpr int map_size_y = 10;
@@ -40,4 +41,7 @@ void afficherInformations();
 void afficherFinJeu();
 void afficherVictoireNiveau();
 
+extern Player* joueur;
+void attaquerEnnemis();
+void choisirClasse();
 #endif
