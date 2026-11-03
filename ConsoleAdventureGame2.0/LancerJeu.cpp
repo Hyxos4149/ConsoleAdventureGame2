@@ -20,7 +20,7 @@ std::unique_ptr<Player> choisirClasse() {
         std::cout << "========================\n"
                   << "   CHOIX DE TA CLASSE   \n"
                   << "========================\n\n"
-                  << "1 - Warrior\n2 - Mage\n3 - WarriorMage\n\n"
+                  << "1 : Warrior\n2 : Mage\n3 : WarriorMage\n\n"
                   << "Ton choix : " << std::flush;
         const int touche = _getch();
         std::cout << '\n';

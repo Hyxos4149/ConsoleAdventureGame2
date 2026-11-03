@@ -101,7 +101,7 @@ void afficherInformations() {
 }
 
 void afficherFinJeu() {
-    std::cout << "\nGAME OVER — partie terminee.\n";
+    std::cout << "\nGAME OVER : partie terminee.\n";
 }
 
 void afficherVictoireNiveau() {
