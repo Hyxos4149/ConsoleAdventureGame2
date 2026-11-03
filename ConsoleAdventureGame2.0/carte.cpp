@@ -1,6 +1,9 @@
 #include "carte.h"
 #include "Player.h"
+#include "zombiendless.h"
+#include "zombieswimer.h"
 
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -48,7 +51,15 @@ bool chargerNiveau(const std::string& fichier, std::string& erreur) {
                 sx = x; sy = y; nouvelleMap[y][x] = SOL; break;
             case 'X': {
                 Enemy ennemi;
-                ennemi.nom = "Ennemi " + std::to_string(nouveauxEnnemis.size() + 1);
+                const int typeZombie = std::rand() % 3;
+                if (typeZombie == 1) {
+                    ennemi = HeadlessZombie();
+                }
+                else if (typeZombie == 2) {
+                    ennemi = ZombieSwimmer();
+                }
+
+                ennemi.nom += " " + std::to_string(nouveauxEnnemis.size() + 1);
                 ennemi.position_x = x;
                 ennemi.position_y = y;
                 ennemi.vivant = true;
@@ -103,7 +114,7 @@ void afficherCarte() {
 
             for (int i = 0; i < enemy_count; ++i)
                 if (enemies[i].vivant && enemies[i].position_x == x && enemies[i].position_y == y)
-                    symbole = 'X';
+                    symbole = enemies[i].symbole;
 
             if (hero.position_x == x && hero.position_y == y)
                 symbole = (joueur != nullptr) ? joueur->GetSymbole() : 'H';

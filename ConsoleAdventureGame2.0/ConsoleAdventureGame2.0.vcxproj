@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -132,6 +132,10 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Mage.cpp" />
     <ClCompile Include="LancerJeu.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="zombie.cpp" />
+    <ClCompile Include="zombiendless.cpp" />
+    <ClCompile Include="zombieswimer.cpp" />
     <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="WarriorMage.cpp" />
     <ClCompile Include="Weapon.cpp" />
@@ -141,6 +145,10 @@
     <ClInclude Include="carte.h" />
     <ClInclude Include="Equipement.h" />
     <ClInclude Include="LancerJeu.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="zombie.h" />
+    <ClInclude Include="zombiendless.h" />
+    <ClInclude Include="zombieswimer.h" />
     <ClInclude Include="jeu.h" />
     <ClInclude Include="Mage.h" />
     <ClInclude Include="Player.h" />
@@ -156,3 +164,4 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
+

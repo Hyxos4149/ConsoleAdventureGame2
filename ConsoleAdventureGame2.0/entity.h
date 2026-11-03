@@ -1,24 +1,27 @@
 #pragma once
-class entity
+#include <algorithm>
+
+class Entity
 {
 public:
 	int life = 20;
 	int position_x = 0;
 	int position_y = 0;
 
-	void move(int input) {
-		if (input == 1) {
-			position_y--;
-		}
-		else if (input == 2) {
-			position_y++;
-		}
-		else if (input == 3) {
-			position_x--;
-		}
-		else if (input == 4) {
-			position_x++;
-		}
+	virtual ~Entity() = default;
+
+	void move(int input);
+
+	void takeDamage(int damage)
+	{
+		life = std::max(0, life - damage);
+	}
+
+	bool isAlive() const
+	{
+		return life > 0;
 	}
 };
+
+using entity = Entity;
 

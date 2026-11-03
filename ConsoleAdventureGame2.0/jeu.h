@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Player.h"
+#include "zombie.h"
 
 constexpr int map_size_x = 20;
 constexpr int map_size_y = 10;
@@ -18,12 +19,7 @@ struct Hero {
     char direction;
 };
 
-struct Enemy {
-    std::string nom;
-    int position_x;
-    int position_y;
-    bool vivant;
-};
+using Enemy = Zombie;
 
 // État partagé du jeu, défini une seule fois dans jeu.cpp.
 extern int map[map_size_y][map_size_x];
