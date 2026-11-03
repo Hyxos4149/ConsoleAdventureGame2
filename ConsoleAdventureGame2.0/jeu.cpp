@@ -1,3 +1,4 @@
+// Role : definit l etat global du jeu et les actions de la partie.
 #include "jeu.h"
 #include "Player.h"
 
@@ -5,6 +6,7 @@
 #include <cstdlib>
 #include <iostream>
 
+// Etat partage : carte, joueur, ennemis, sortie et execution de la partie.
 int map[map_size_y][map_size_x] = {};
 Player* joueur = nullptr;
 Enemy enemies[enemy_count] = {};
@@ -12,6 +14,7 @@ int sortie_x = 0;
 int sortie_y = 0;
 bool game = true;
 
+// Lit une touche; Echap met fin a la partie.
 int lireTouche() {
     const int touche = _getch();
     if (touche == 27) game = false;
@@ -19,6 +22,7 @@ int lireTouche() {
     return touche;
 }
 
+// Convertit les touches Z/Q/S/D en deplacement et verifie les collisions.
 void deplacerHero(int touche) {
     if (joueur == nullptr) return;
     int dx = 0;
@@ -31,9 +35,11 @@ void deplacerHero(int touche) {
         default: return;
     }
     joueur->Move(dx, dy);
+    // Verifie les collisions entre le joueur et les ennemis.
     verifierCollisions();
 }
 
+// Retire les ennemis vivants adjacents au joueur.
 void attaquerEnnemis() {
     if (joueur == nullptr) return;
     static constexpr int dx[4] = {0, 0, -1, 1};
@@ -52,6 +58,7 @@ void attaquerEnnemis() {
     }
 }
 
+// Detecte les ennemis sur la case du joueur et applique les degats.
 void verifierCollisions() {
     if (joueur == nullptr) return;
     for (int i = 0; i < enemy_count; ++i) {
@@ -68,6 +75,7 @@ void verifierCollisions() {
     }
 }
 
+// Fait tenter un mouvement aleatoire a chaque ennemi vivant.
 void tourEnnemis() {
     if (joueur == nullptr || !joueur->IsAlive()) return;
     static constexpr int dx[4] = {0, 0, -1, 1};
@@ -92,18 +100,22 @@ void tourEnnemis() {
             enemies[i].position_y = ny;
         }
     }
+    // Verifie les collisions entre le joueur et les ennemis.
     verifierCollisions();
 }
 
+// Affiche les statistiques du joueur et les commandes.
 void afficherInformations() {
     if (joueur != nullptr) joueur->DisplayStats();
     std::cout << "Deplacement : Z/Q/S/D | Espace = Attaquer | Echap = Quitter\n";
 }
 
+// Signale la fin de partie apres une defaite.
 void afficherFinJeu() {
-    std::cout << "\nGAME OVER : partie terminee.\n";
+    std::cout << "\nGAME OVER - partie terminee.\n";
 }
 
+// Signale que le niveau en cours est termine.
 void afficherVictoireNiveau() {
     std::cout << "\nNiveau termine !\n";
 }

@@ -1,3 +1,4 @@
+// Role : lit les fichiers de niveau et dessine la carte dans la console.
 #include "carte.h"
 #include "Player.h"
 
@@ -6,6 +7,7 @@
 #include <sstream>
 #include <vector>
 
+    // Charge et valide un niveau depuis un fichier texte.
 bool chargerNiveau(const std::string& fichier, std::string& erreur) {
     std::ifstream entree(fichier);
     if (!entree) {
@@ -89,6 +91,7 @@ bool chargerNiveau(const std::string& fichier, std::string& erreur) {
     return true;
 }
 
+    // Affiche les symboles de toutes les cases de la carte.
 void afficherCarte() {
     for (int y = 0; y < map_size_y; ++y) {
         for (int x = 0; x < map_size_x; ++x) {
