@@ -1,7 +1,8 @@
 #pragma once
 #include "Player.h"
 
-class Warrior : public Player {
+class Warrior : public virtual Player {
 public:
-    Warrior() : Player("Warrior", 3, 'W') {}
+    Warrior(int startX, int startY);
+    char GetSymbole() const override;
 };

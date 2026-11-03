@@ -2,9 +2,8 @@
 #include "Warrior.h"
 #include "Mage.h"
 
-class WarriorMage : public Player {
-protected:
-    int mana;
+class WarriorMage : public Warrior, public Mage {
 public:
-    WarriorMage() : Player("WarriorMage", 3, 'H'), mana(10) {}
+    WarriorMage(int startX, int startY);
+    char GetSymbole() const override;
 };

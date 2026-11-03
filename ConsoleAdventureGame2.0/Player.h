@@ -1,21 +1,35 @@
 #pragma once
-#include <string>
+
+#include "Weapon.h"
+#include "Armor.h"
 
 class Player {
 protected:
-    int life;
-    std::string name;
-    char symbole;
+    int life = 3;
+    int maxLife = 3;
+    int attack = 10;
+    int defense = 0;
+    int x = 0;
+    int y = 0;
+    Weapon weapon;
+    Armor armor;
+
 public:
-    Player(std::string n = "Joueur", int l = 3, char s = 'H');
-    virtual ~Player() {}
-    void DisplayStats();
-    void TakeDamage(int value);
+    Player(int startX, int startY);
+    virtual ~Player() = default;
+
+    void DisplayStats() const;
+    virtual void TakeDamage(int value);
     void Heal(int value);
-    void Attack(Player& target);
-    bool IsAlive();
-    bool CanPlay();
-    int GetLife();
+    bool IsAlive() const;
+    bool CanPlay() const;
+    void Move(int dx, int dy);
+
+    int GetLife() const;
     void SetLife(int value);
-    char GetSymbole() { return symbole; }
+    int GetX() const;
+    int GetY() const;
+    void SetPosition(int newX, int newY);
+    virtual char GetSymbole() const;
+    virtual int GetAttack() const;
 };
