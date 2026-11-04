@@ -9,13 +9,11 @@ public:
 		nom = "Zombie Swimmer";
 		symbole = 'S';
 		life = 25;
-	}
-
-	void swim()
-	{
-		move(4);
+		typeDeplacement = Deplacement::Aleatoire;
+		terrainAutorise = tuiletype::SOL;
+		peutMarcherSurEau = true;
 	}
 };
 
-using zombieswimer = ZombieSwimmer;
+
 

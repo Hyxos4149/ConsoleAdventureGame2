@@ -9,8 +9,9 @@ public:
 		nom = "Headless Zombie";
 		symbole = 'T';
 		life = 30;
+		typeDeplacement = Deplacement::Aleatoire;
 	}
 };
 
-using zombiendless = HeadlessZombie;
+
 

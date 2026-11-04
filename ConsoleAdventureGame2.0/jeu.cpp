@@ -6,7 +6,6 @@
 #include <conio.h>
 #include <cstdlib>
 #include <iostream>
-    
 #include <string>
 
 Player* joueur = nullptr;
@@ -34,10 +33,9 @@ void deplacerHero(int touche) {
         case 's': case 'S': dy = 1;  hero.direction = 's'; break;
         case 'q': case 'Q': dx = -1; hero.direction = 'q'; break;
         case 'd': case 'D': dx = 1;  hero.direction = 'd'; break;
-            if (touche == ' ') {
-                attaquerEnnemis();
-                return;
-            }
+        case ' ':
+            attaquerEnnemis();
+            return;
         default: return;
     }
 
@@ -65,16 +63,13 @@ void verifierCollisions() {
 }
 
 void tourEnnemis() {
-    // Chaque ennemi vivant tente un deplacement aleatoire vers une case libre.
-    static const int dx[4] = {0, 0, -1, 1};
-    static const int dy[4] = {-1, 1, 0, 0};
+    // Chaque zombie choisit son deplacement, puis le jeu verifie les obstacles.
     for (int i = 0; i < enemy_count; ++i) {
         if (!enemies[i].vivant) continue;
-        const int direction = std::rand() % 4;
-        const int nx = enemies[i].position_x + dx[direction];
-        const int ny = enemies[i].position_y + dy[direction];
-        if (nx < 0 || nx >= map_size_x || ny < 0 || ny >= map_size_y) continue;
-        if (map[ny][nx] != SOL || (nx == sortie_x && ny == sortie_y)) continue;
+        enemies[i].choisirDeplacement(hero.position_x, hero.position_y);
+        const int nx = enemies[i].position_x + enemies[i].deltaX;
+        const int ny = enemies[i].position_y + enemies[i].deltaY;
+        if (nx == sortie_x && ny == sortie_y) continue;
         bool occupee = false;
         for (int j = 0; j < enemy_count; ++j) {
             if (j != i && enemies[j].vivant && enemies[j].position_x == nx &&
@@ -84,8 +79,8 @@ void tourEnnemis() {
             }
         }
         if (!occupee) {
-            enemies[i].position_x = nx;
-            enemies[i].position_y = ny;
+            enemies[i].move(enemies[i].deltaX, enemies[i].deltaY, map,
+                enemies[i].terrainAutorise);
         }
     }
     verifierCollisions();

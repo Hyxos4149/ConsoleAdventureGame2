@@ -31,8 +31,8 @@ extern bool game;
 
 int lireTouche();
 void deplacerHero(int touche);
-void verifierCollisions();
 void tourEnnemis();
+void verifierCollisions();
 void afficherInformations();
 void afficherFinJeu();
 void afficherVictoireNiveau();

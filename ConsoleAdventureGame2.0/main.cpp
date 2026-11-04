@@ -1,6 +1,5 @@
 #include "jeu.h"
 #include "carte.h"
-
 #include <conio.h>
 #include <cstdlib>
 #include <ctime>

@@ -3,10 +3,10 @@
 
 class Armor : public Equipement
 {
-public:
-	int GetDefense();
-
 private:
 	int defense = 30;
+
+public:
+	int GetDefense();
 };
 

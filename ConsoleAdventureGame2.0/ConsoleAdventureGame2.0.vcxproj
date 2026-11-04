@@ -134,8 +134,6 @@
     <ClCompile Include="LancerJeu.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="zombie.cpp" />
-    <ClCompile Include="zombiendless.cpp" />
-    <ClCompile Include="zombieswimer.cpp" />
     <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="WarriorMage.cpp" />
     <ClCompile Include="Weapon.cpp" />
@@ -164,4 +162,3 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
-
