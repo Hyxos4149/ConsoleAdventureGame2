@@ -124,9 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Armor.cpp" />
     <ClCompile Include="carte.cpp" />
-    <ClCompile Include="Equipement.cpp" />
     <ClCompile Include="jeu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -134,19 +132,15 @@
     <ClCompile Include="LancerJeu.cpp" />
     <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="WarriorMage.cpp" />
-    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Armor.h" />
     <ClInclude Include="carte.h" />
-    <ClInclude Include="Equipement.h" />
     <ClInclude Include="LancerJeu.h" />
     <ClInclude Include="jeu.h" />
     <ClInclude Include="Mage.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Warrior.h" />
     <ClInclude Include="WarriorMage.h" />
-    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="niveau1.txt" />
