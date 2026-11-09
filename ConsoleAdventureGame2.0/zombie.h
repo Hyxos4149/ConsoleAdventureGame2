@@ -11,9 +11,13 @@ enum class Deplacement
 class Zombie : public Entity
 {
 public:
+	Zombie()
+	{
+		symbole = 'Z';
+	}
+
 	// Identité et état.
 	std::string nom = "Zombie";
-	char symbole = 'Z';
 	bool vivant = true;
 
 	// Déplacement.

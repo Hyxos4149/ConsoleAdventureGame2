@@ -30,7 +30,12 @@ void lancerJeu() {
             afficherInformations();
             const int touche = lireTouche();
             if (!game) break;
-            deplacerHero(touche);
+            if (touche == ' ') {
+                attaquerEnnemis();
+            }
+            else if (hero.deplacer(touche, map)) {
+                verifierCollisions();
+            }
             if (game && !(hero.position_x == sortie_x && hero.position_y == sortie_y))
                 tourEnnemis();
         }

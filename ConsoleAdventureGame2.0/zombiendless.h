@@ -7,8 +7,8 @@ public:
 	HeadlessZombie()
 	{
 		nom = "Headless Zombie";
-		symbole = 'T';
 		life = 30;
+		symbole = 'T';
 		typeDeplacement = Deplacement::Aleatoire;
 	}
 };

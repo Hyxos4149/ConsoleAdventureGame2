@@ -11,14 +11,6 @@ constexpr int enemy_count = 5;
 
 enum Terrain { SOL = 0, MONTAGNE = 1, EAU = 2 };
 
-struct Hero {
-    std::string nom;
-    int position_x;
-    int position_y;
-    int vies;
-    char direction;
-};
-
 using Enemy = Zombie;
 
 // État partagé du jeu, défini une seule fois dans jeu.cpp.
@@ -30,7 +22,6 @@ extern int sortie_y;
 extern bool game;
 
 int lireTouche();
-void deplacerHero(int touche);
 void tourEnnemis();
 void verifierCollisions();
 void afficherInformations();

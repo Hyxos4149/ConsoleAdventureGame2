@@ -11,7 +11,7 @@
 Player* joueur = nullptr;
 
 int map[map_size_y][map_size_x] = {};
-Hero hero = {"Heros", 0, 5, 3, 's'};
+Hero hero;
 Enemy enemies[enemy_count] = {};
 int sortie_x = 0;
 int sortie_y = 0;
@@ -24,28 +24,6 @@ int lireTouche() {
         return touche;
     }
     return touche;
-}
-
-void deplacerHero(int touche) {
-    int dx = 0, dy = 0;
-    switch (touche) {
-        case 'z': case 'Z': dy = -1; hero.direction = 'z'; break;
-        case 's': case 'S': dy = 1;  hero.direction = 's'; break;
-        case 'q': case 'Q': dx = -1; hero.direction = 'q'; break;
-        case 'd': case 'D': dx = 1;  hero.direction = 'd'; break;
-        case ' ':
-            attaquerEnnemis();
-            return;
-        default: return;
-    }
-
-    const int nx = hero.position_x + dx;
-    const int ny = hero.position_y + dy;
-    if (nx < 0 || nx >= map_size_x || ny < 0 || ny >= map_size_y) return;
-    if (map[ny][nx] != SOL) return;
-    hero.position_x = nx;
-    hero.position_y = ny;
-    verifierCollisions();
 }
 
 void verifierCollisions() {
@@ -79,7 +57,7 @@ void tourEnnemis() {
             }
         }
         if (!occupee) {
-            enemies[i].move(enemies[i].deltaX, enemies[i].deltaY, map,
+            enemies[i].deplacer(enemies[i].deltaX, enemies[i].deltaY, map,
                 enemies[i].terrainAutorise);
         }
     }
