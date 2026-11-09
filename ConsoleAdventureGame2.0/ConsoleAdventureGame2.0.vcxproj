@@ -124,29 +124,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Armor.cpp" />
-    <ClCompile Include="carte.cpp" />
-    <ClCompile Include="Equipement.cpp" />
-    <ClCompile Include="jeu.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Mage.cpp" />
-    <ClCompile Include="LancerJeu.cpp" />
     <ClCompile Include="Warrior.cpp" />
+    <ClCompile Include="Mage.cpp" />
     <ClCompile Include="WarriorMage.cpp" />
-    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="LancerJeu.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="zombie.cpp" />
+    <ClCompile Include="zombiendless.cpp" />
+    <ClCompile Include="zombieswimer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Armor.h" />
-    <ClInclude Include="carte.h" />
-    <ClInclude Include="Equipement.h" />
-    <ClInclude Include="LancerJeu.h" />
-    <ClInclude Include="jeu.h" />
-    <ClInclude Include="Mage.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Warrior.h" />
+    <ClInclude Include="Mage.h" />
     <ClInclude Include="WarriorMage.h" />
-    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="LancerJeu.h" />
+    <ClInclude Include="zombie.h" />
+    <ClInclude Include="zombiendless.h" />
+    <ClInclude Include="zombieswimer.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="niveau1.txt" />

@@ -1,21 +1,14 @@
-// Role : declare la classe Mage et ses capacites liees au mana.
+// Mage : fragile mais puissant, avec une reserve de mana.
 #pragma once
 #include "Player.h"
-
-// Classe Mage : ajoute une reserve de mana et le lancement de sort.
 class Mage : public virtual Player {
 private:
-    int mana = 100;
-
+    int mana_ = 100;
 public:
-    // Cree un mage a la position indiquee.
-    Mage(int startX, int startY);
-    // Retourne le mana disponible.
+    explicit Mage(Vector2 depart);
+    Mage(int x, int y) : Mage(Vector2{x, y}) {}
     int GetMana() const;
-    // Met a jour le mana sans valeur negative.
-    void SetMana(int value);
-    // Lance un sort si le mana est suffisant.
+    void SetMana(int valeur);
     void CastSpell();
-    // Retourne le symbole du mage sur la carte.
     char GetSymbole() const override;
 };
