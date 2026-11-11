@@ -1,14 +1,4 @@
-// Role : implemente le personnage qui combine les deux classes.
+// Le personnage mixte reprend les statistiques resistantes du guerrier.
 #include "WarriorMage.h"
-
-// Initialise les bases partagees et les caracteristiques combinees.
-WarriorMage::WarriorMage(int startX, int startY)
-    // Cree le joueur a sa position initiale.
-    : Player(startX, startY), Warrior(startX, startY), Mage(startX, startY) {
-    life = 3;
-    maxLife = 3;
-    attack = 50;
-}
-
-// Retourne le caractere du personnage combine sur la carte.
+WarriorMage::WarriorMage(Vector2 depart) : Player(depart), Warrior(depart), Mage(depart) { life_ = maxLife_ = 3; attack_ = 50; symbole_ = 'H'; }
 char WarriorMage::GetSymbole() const { return 'H'; }

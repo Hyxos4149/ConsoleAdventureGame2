@@ -1,13 +1,10 @@
-// Role : declare le personnage qui combine Warrior et Mage.
+// Double specialisation existante : heritage virtuel partage le Player commun.
 #pragma once
 #include "Warrior.h"
 #include "Mage.h"
-
-// Classe combinee : herite des deux classes specialisees.
 class WarriorMage : public Warrior, public Mage {
 public:
-    // Cree le personnage combine a la position indiquee.
-    WarriorMage(int startX, int startY);
-    // Retourne le symbole du personnage combine.
+    explicit WarriorMage(Vector2 depart);
+    WarriorMage(int x, int y) : WarriorMage(Vector2{x, y}) {}
     char GetSymbole() const override;
 };
